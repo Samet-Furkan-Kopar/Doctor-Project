@@ -1,0 +1,52 @@
+<div class="rbt-breadcrumb-default rbt-breadcrumb-style-3">
+    <div class="breadcrumb-inner">
+        <img src="/assets/images/bg/bg-image-10.jpg" alt="Education Images">
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="content text-start">
+                    <ul class="page-list">
+                        <li class="rbt-breadcrumb-item"><a href="/">Home</a></li>
+                        <li>
+                            <div class="icon-right"><i class="feather-chevron-right"></i></div>
+                        </li>
+                        <li class="rbt-breadcrumb-item active">Web Development</li>
+                    </ul>
+                    <h2 class="title"><%= course.title %></h2>
+                    <p class="description"><%= course.content %></p>
+
+                    <div class="d-flex align-items-center mb--20 flex-wrap rbt-course-details-feature">
+
+
+                        <div class="feature-sin rating">
+                            <a href="#">4.8</a>
+                            <a href="#"><i class="fa fa-star"></i></a>
+                            <a href="#"><i class="fa fa-star"></i></a>
+                            <a href="#"><i class="fa fa-star"></i></a>
+                            <a href="#"><i class="fa fa-star"></i></a>
+                            <a href="#"><i class="fa fa-star"></i></a>
+                        </div>
+
+                        <div class="feature-sin total-rating">
+                            <a class="rbt-badge-4" href="#">215,475 rating</a>
+                        </div>
+
+                        <div class="feature-sin total-student">
+                            <span>616,029 students</span>
+                        </div>
+
+                    </div>
+
+
+                    <ul class="rbt-meta">
+                        <li><i class="feather-calendar"></i><%= course.updatedAt.toLocaleString() %> </li>
+                        <li><i class="feather-globe"></i>English</li>
+                        <li><i class="feather-award"></i>Certified Course</li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

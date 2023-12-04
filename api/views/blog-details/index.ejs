@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <%-include("../partials/_header.ejs") %>
+</head>
+
+<body class="rbt-header-sticky">
+
+    <!-- Start Header Area -->
+    <%-include("../partials/_navbar.ejs", {navtype:''}) %>
+    <!-- End Header Area  -->
+   
+
+    <!-- Mobile Menu Section -->
+    <%-include("../partials/_mobilemenu.ejs") %>
+    <!-- Start Side Vav -->
+
+
+    <%-include("./components/content.ejs") %>
+
+
+
+  
+ <!-- Start Footer aera -->
+ <%-include("../partials/_footer.ejs") %>
+ <!-- End Footer aera -->
+ 
+     <!-- JS
+ ============================================ -->
+ <%-include("../partials/_scripts.ejs") %>
+</body>
+
+</html>

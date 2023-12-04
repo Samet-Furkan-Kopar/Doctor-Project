@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%-include("../partials/_header.ejs") %>
+   
+</head>
+
+<body class="rbt-header-sticky">
+
+  <!-- Start Header Area -->
+  <%-include("../partials/_navbar.ejs", {navtype:''}) %>
+  <!-- End Header Area  -->
+ 
+
+  <!-- Start Side Vav -->
+  <%-include("../partials/_mobilemenu.ejs") %>
+  <!-- End Side Vav -->
+ 
+
+    <a class="close_side_menu" href="javascript:void(0);"></a>
+
+    <%-include("./components/_contactUs.ejs") %>
+    
+
+    <%-include("./components/_contactForm.ejs") %>
+ 
+    <%-include("./components/_googleMap.ejs") %>
+
+   
+ <!-- Start Footer aera -->
+ <%-include("../partials/_footer.ejs") %>
+ <!-- End Footer aera -->
+ 
+     <!-- JS
+ ============================================ -->
+ <%-include("../partials/_scripts.ejs") %>
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<div class="rbt-conatct-area bg-gradient-11 rbt-section-gap">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-title text-center mb--60">
+                    <% if(contactUs && contactUs.content.title) { %>
+                    <span class="subtitle bg-secondary-opacity"><%- contactUs.content.title %></span>
+                    <% } %>
+                    <% if(contactUs && contactUs.content.subtitle) { %>
+                    <h2 class="title"><%- contactUs.content.subtitle %></h2>
+                    <% } %>
+                </div>
+            </div>
+        </div>
+        <div class="row g-5">
+            <div class="col-lg-4 col-md-6 col-sm-6 col-12 sal-animate" data-sal="slide-up" data-sal-delay="150" data-sal-duration="800">
+                <div class="rbt-address">
+                    <div class="icon">
+                        <i class="feather-headphones"></i>
+                    </div>
+                    <div class="inner">
+                        <h4 class="title">Telefon Numarası</h4>
+                        <% if(contactUs && contactUs.content.phoneNumber) { %>
+                        <p><a href="<%- contactUs.content.phoneNumber %>"><%- contactUs.content.phoneNumber %></a></p>
+                        <% } %>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6 col-12 sal-animate" data-sal="slide-up" data-sal-delay="200" data-sal-duration="800">
+                <div class="rbt-address">
+                    <div class="icon">
+                        <i class="feather-mail"></i>
+                    </div>
+                    <div class="inner">
+                        <h4 class="title">E-posta Adresi</h4>
+                        <% if(contactUs && contactUs.content.email) { %>
+                        <p><a href="mailto:admin@gmail.com"><%- contactUs.content.email %></a></p>
+                        <% } %>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6 col-12 sal-animate" data-sal="slide-up" data-sal-delay="250" data-sal-duration="800">
+                <div class="rbt-address">
+                    <div class="icon">
+                        <i class="feather-map-pin"></i>
+                    </div>
+                    <div class="inner">
+                        <h4 class="title">Lokasyon</h4>
+                        <% if(contactUs && contactUs.content.address) { %>
+                            <%- contactUs.content.address %>
+                        <% } %>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

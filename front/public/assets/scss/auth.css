@@ -1,0 +1,27 @@
+.login-header {
+  font-size: 20px;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.71);
+}
+
+.login-header--text {
+  font-weight: 600;
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.44);
+}
+
+.login-terms-and-conditions--title {
+  color: rgba(0, 0, 0, 0.36) !important;
+  font-weight: 500;
+  font-size: 12px;
+}
+
+.forgot-password {
+  padding-top: 180px !important;
+}
+
+@media (max-width: 640px) {
+  .forgot-password {
+    padding-top: 80px !important;
+  }
+}

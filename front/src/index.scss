@@ -1,0 +1,23 @@
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";
+@import "../public/assets/scss/components/custom-slick";
+@import "../public/assets/scss/main.css";
+@import "../public/assets/scss/menu.css";
+@import "../public/assets/scss/megadropdown.css";
+@import "../public/assets/scss/dashbord_navitaion.css";
+@import "../public/assets/scss/ace-responsive-menu.css";
+@import "../public/assets/scss/components/input-range-slider";
+@import "../public/assets/scss/components/custom_theme.scss";
+@import "../public/assets/scss/components/dashboard.scss";
+@import "../public/assets/scss/responsive.css";
+@import "node_modules/react-modal-video/scss/modal-video.scss";
+@import "../public/assets/scss/auth.css";
+@import "../public/assets/scss/google-map.css";
+
+.parent-menu-active > .pro-inner-item > .pro-item-content {
+  color: var(--color-primary) !important;
+}
+
+body {
+  padding: 0 !important;
+}

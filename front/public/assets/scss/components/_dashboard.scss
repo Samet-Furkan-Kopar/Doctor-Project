@@ -1,0 +1,13 @@
+.sidebar-menu {
+    .header {
+        display: flex;
+        align-items: center;
+        img {
+            margin-right: 10px;
+        }
+    }
+}
+.recent_job_activity .grid ul {
+    display: flex;
+    align-items: flex-start;
+}

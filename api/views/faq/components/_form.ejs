@@ -1,0 +1,41 @@
+<div class="rbt-accordion-area accordion-style-1 bg-color-white rbt-section-gap">
+    <div class="container mt--60">
+        <div class="row g-5">
+            <% list.map((l, key) => { %>
+                <div class="col-lg-6">
+                    <div class="rbt-accordion-style accordion">
+                        <div class="section-title text-start mb--60">
+                            <h4 class="title"><%= l.title %></h4>
+                        </div>
+                        <div class="rbt-accordion-style rbt-accordion-04 accordion">
+                            <div class="accordion" id="accordionExamplec<%= key %>">
+                                <% if(l.questions.length > 0){ %>
+                                    <% l.questions.map((q, k) => {%>
+                                        <div class="accordion-item card">
+                                            <h2 class="accordion-header card-header" id="headingThree<%= q._id %>">
+                                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                                    data-bs-target="#collapseThree<%= q._id %>" aria-expanded="true"
+                                                    aria-controls="collapseThree<%= q._id %>">
+                                                   <%= q.title %>
+                                                </button>
+                                            </h2>
+                                            <div id="collapseThree<%= q._id %>" class="accordion-collapse collapse"
+                                                aria-labelledby="headingThree<%= q._id %>" data-bs-parent="#accordionExamplec<%= key %>">
+                                                <div class="accordion-body card-body">
+                                                    <%- q.content %>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <% }) %>
+                                <% } %>
+
+                              
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <% }) %>
+        </div>
+    </div>
+</div>

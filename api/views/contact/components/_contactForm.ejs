@@ -1,0 +1,63 @@
+<div class="rbt-contact-address">
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-lg-6">
+                <div class="thumbnail">
+                    <% if(contactForm && contactForm.content.image) { %>
+                    <img class="w-100 radius-6" src="<%- contactForm.content.image %>" alt="Contact Images">
+                    <% } else { %>
+                    <img class="w-100 radius-6" src="/assets/images/about/contact.jpg" alt="Contact Images">
+                    <% } %>
+
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="rbt-contact-form contact-form-style-1 max-width-auto">
+                    <div class="section-title text-start">
+                        <% if(contactForm && contactForm.content.title) { %>
+                            <span class="subtitle bg-primary-opacity"><%- contactForm.content.title %></span>
+                        <% } %>
+                    </div>
+                    <% if(contactForm && contactForm.content.subtitle) { %>
+                        <h3 class="title"><%- contactForm.content.subtitle %></h3>
+                    <% } %>
+                  
+                    <form id="contact-form" method="POST" action="mail.php" class="rainbow-dynamic-form max-width-auto">
+                        <div class="form-group">
+                            <input name="contact-name" id="contact-name" type="text">
+                            <label>Name</label>
+                            <span class="focus-border"></span>
+                        </div>
+                        <div class="form-group">
+                            <input name="contact-phone" type="email">
+                            <label>Email</label>
+                            <span class="focus-border"></span>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="subject" name="subject">
+                            <label>Your Subject</label>
+                            <span class="focus-border"></span>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="contact-message" id="contact-message"></textarea>
+                            <label>Message</label>
+                            <span class="focus-border"></span>
+                        </div>
+                        <div class="form-submit-group">
+                            <button name="submit" type="submit" id="submit" class="rbt-btn btn-md btn-gradient hover-icon-reverse w-100">
+                                <span class="icon-reverse-wrapper">
+                                    <% if(contactForm && contactForm.content.buttonText) { %>
+                                    <span class="btn-text"><%- contactForm.content.buttonText %></span>
+                                    <% } %>
+                                <span class="btn-icon"><i class="feather-arrow-right"></i></span>
+                                <span class="btn-icon"><i class="feather-arrow-right"></i></span>
+                                </span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

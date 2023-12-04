@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%-include("../partials/_header.ejs") %>
+  </head>
+
+  <body class="rbt-header-sticky">
+    <!-- Start Header Area -->
+    <%-include("../partials/_navbar.ejs", {navtype:''}) %>
+    <!-- End Header Area  -->
+
+    <!-- Mobile Menu Section -->
+    <%-include("../partials/_mobilemenu.ejs") %>
+
+    <!-- Start Slider Area  -->
+    <% if(sliderArena) {%> <%-include("./components/_sliderArena.ejs") %> <% } %>
+    <!-- End Slider Area  -->
+
+    <!-- Start Coding Quality Area  -->
+    <% if(codingQualityArena) {%>  <%-include("./components/_codingQualityArena.ejs") %> <% } %>
+   
+    <!-- End Coding Quality Area  -->
+
+    <!-- Start Advance Tab  -->
+    <% if(advanceTab) {%> <%-include("./components/_advanceTab.ejs") %> <% } %>
+    
+    <!-- End Advance Tab  -->
+
+    <!-- Start Course Presentation Area  -->
+    <% if(coursePresentation) {%> <%-include("./components/_coursePresentation.ejs") %>  <% } %>
+    <!-- End Course Presentation Area  -->
+
+    <!-- Start Event Presentation Area  -->
+    <% if(eventPresentation) {%><%-include("./components/_eventPresentation.ejs") %> <% } %>
+    
+    <!-- End Event Presentation Area  -->
+
+    <!-- Start Shop Presentation Area  -->
+    <% if(shopPresentation) {%> <%-include("./components/_shopPresentation.ejs") %> <% } %>
+    
+
+    <!-- End Shop Presentation Area  -->
+
+    <!-- Start Blog Presentation Area  -->
+    <% if(blogPresentation) {%> <%-include("./components/_blogPresentation.ejs")%> <% } %>
+
+    <!-- End Blog Presentation Area  -->
+
+    <!-- Start Testimonial Area  -->
+    <%-include("./components/_testimonialArena.ejs") %>
+
+    <!-- End Testimonial Area  -->
+
+    <!-- Start Footer aera -->
+    <%-include("../partials/_footer.ejs") %>
+    <!-- End Footer aera -->
+
+    <!-- JS
+============================================ -->
+    <%-include("../partials/_scripts.ejs") %>
+  </body>
+</html>

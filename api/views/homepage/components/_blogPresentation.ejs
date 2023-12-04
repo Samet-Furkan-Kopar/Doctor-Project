@@ -1,0 +1,71 @@
+<div class="rbt-inner-page-layout-area bg-color-extra2 rbt-section-gap top-circle-shape-top top-circle-shape-top-left">
+    <div class="wrapper position-relative overflow-hidden">
+        <div class="rbt-splite-style">
+            <div class="split-wrapper">
+                <div class="row g-0 align-items-center">
+                    <div class="col-lg-12 col-xl-6 col-12 order-2 order-xl-1">
+                        <div class="split-inner">
+                            <span class="rbt-badge-6 bg-primary-opacity"><%= blogPresentation.content.title %></span>
+                            <h4 class="title"><%= blogPresentation.content.title %></h4>
+                            <p class="description"><%= blogPresentation.content.title %></p>
+
+                            <div class="layout-format-image mb--20">
+                                <img src="<%= blogPresentation.content.icon %>" alt="post Images">
+                            </div>
+
+                            <h5 class="subtitle mb--20"><%= blogPresentation.content.listTitle %></h5>
+
+                            <div class="plan-offer-list-wrapper">
+                                <ul class="plan-offer-list rbt-list-primary-opacity">
+                                    <% for(result of blogPresentation.content.list) {%>
+                                        <li><i class="feather-check"></i><%= result %></li>
+                                    <% } %>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12 col-xl-5 col-12 offset-xl-1 order-1 order-xl-2">
+                        <div class="swiper banner-splash-inner-layout-active rbt-arrow-between rbt-dot-bottom-center icon-bg-primary">
+                            <div class="swiper-wrapper">
+
+                                <!-- Start Single Slider  -->
+                                <% for(result of blogPresentation.content.array) {%>
+                                    <div class="swiper-slide">
+                                        <div class="single-slide">
+                                            <div class="rbt-splash-inner-layout-inner">
+                                                <div class="thumbnail image-left-content">
+                                                    <img src="<%= result %>" alt="split Images">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <% } %>
+                                <!-- End Single Slider  -->
+
+                            </div>
+
+                            <div class="rbt-swiper-pagination"></div>
+
+                            <div class="rbt-swiper-arrow rbt-arrow-left">
+                                <div class="custom-overfolow">
+                                    <i class="rbt-icon feather-arrow-left"></i>
+                                    <i class="rbt-icon-top feather-arrow-left"></i>
+                                </div>
+                            </div>
+
+                            <div class="rbt-swiper-arrow rbt-arrow-right">
+                                <div class="custom-overfolow">
+                                    <i class="rbt-icon feather-arrow-right"></i>
+                                    <i class="rbt-icon-top feather-arrow-right"></i>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="top-circle-shape"></div>
+        </div>
+    </div>
+</div>

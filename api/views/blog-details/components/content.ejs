@@ -1,0 +1,36 @@
+<div class="rbt-overlay-page-wrapper">
+    <div class="breadcrumb-image-container breadcrumb-style-max-width">
+        <div class="breadcrumb-image-wrapper">
+        </div>
+        <div class="breadcrumb-image-wrapper bg-banner-area">
+           
+        </div>
+        <div class="breadcrumb-content-top text-center  mt--60">
+            <ul class="meta-list justify-content-center mb--10">
+                <li class="list-item">
+                    <i class="feather-clock"></i>
+                    <span><%= new Date(blog.createdAt).toLocaleDateString('tr-TR',
+                        { day: "numeric", month: "long", year: 'numeric' })  %></span>
+                </li>
+            </ul>
+            <h1 class="title"><%= blog.title %></h1>
+        </div>
+    </div>
+
+    <div class="rbt-blog-details-area rbt-section-gapBottom breadcrumb-style-max-width">
+        <div class="blog-content-wrapper rbt-article-content-wrapper">
+            <div class="content">
+                <div class="post-thumbnail mb--30 position-relative wp-block-image alignwide">
+                    <figure>
+                        <img src="/<%= blog.image %>" alt="Blog Images">
+                    </figure>
+                </div>
+                
+                <%- blog.content %>
+                
+                <!-- End Single Card  -->
+
+            </div>
+        </div>
+    </div>
+</div>
