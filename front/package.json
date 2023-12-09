@@ -28,6 +28,7 @@
     "react": "18.2.0",
     "react-chartjs-2": "^5.0.1",
     "react-currency-input-field": "^3.6.11",
+    "react-datepicker": "^4.24.0",
     "react-dom": "18.2.0",
     "react-form-stepper": "^2.0.3",
     "react-hot-toast": "^2.4.1",

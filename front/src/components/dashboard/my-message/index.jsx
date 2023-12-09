@@ -30,19 +30,18 @@ const Index = ({ id }) => {
 
     })
   } 
-  console.log("messages", messages);
-  useEffect(() => {
+  // useEffect(() => {
 
-    if(id){
-      setAdvertId(id) 
-      getUserMessages('', id)
-    }
-    // id varsa advertId ye ata
-  }, [id])//sadece advertId ile gönderebiliyorsun ama karşıdan mesaj gelmesi için sender ve conversation idlerde lazım
+  //   if(id){
+  //     setAdvertId(id) 
+  //     getUserMessages('', id)
+  //   }
+  //   // id varsa advertId ye ata
+  // }, [id])//sadece advertId ile gönderebiliyorsun ama karşıdan mesaj gelmesi için sender ve conversation idlerde lazım
  
 
-  const getUserMessages = (conversationId, advertId) => {
-    chatMessageServices.getMessage(conversationId, advertId).then((res) => {
+  const getUserMessages = (conversationId) => {
+    chatMessageServices.getMessage(conversationId).then((res) => {
       if(res?.data){
         setMessage(res?.data);
         setAdvertId(advertId);
@@ -59,19 +58,21 @@ const Index = ({ id }) => {
 
 
   useEffect(() => {
-    setSocket(io("https://api.sozlesmeliemlak.com"))
+    setSocket(io("http://localhost:8800"))
   }, [])
 
 
   const postMessage = (msg) => {
     const fd = new FormData();
     fd.append("text", msg);
+    fd.append("receiverId", id);  
     conversationId && fd.append("conversationId", conversationId);
-    chatMessageServices.postMessage(fd, advertId).then((res) => {
-      if (res?.succedd) {
+    chatMessageServices.postMessage(fd).then((res) => { 
+      if (res?.succeded) {
+        console.log(res?.data);
         setConversationId(res?.data?.conversationId)
         setSenderId(res?.data?.receiverId)
-        let obj = {
+        let obj = { 
           text: res?.data?.text || "",
           type: "going",
           createdAt: Date.now(),
@@ -84,14 +85,17 @@ const Index = ({ id }) => {
 
   useEffect(() => {
     getConversationList()
+  }, [search])// /mesajlarim ile gelenler kullanıcılara ulaşamıyr   ,conservationId vardı
+  useEffect(() => {
+    getConversationList()
   }, [search, conversationId])
 
 
-
-  const addNewMessageToSelUser = (data) => {
+  const addNewMessageToSelUser = (data) => { 
     let msgs = []
 
-    if (data?.message?.senderId === senderId && data?.message?.conversationId === conversationId && data?.message?.advertId === advertId && (msgs?.length > 0 ? (msgs[0]?._id !== data?.message?._id) : (true))) {
+    console.log(senderId,data?.message?.senderId,conversationId,data?.message?.conversationId);
+    if (data?.message?.senderId === senderId && data?.message?.conversationId === conversationId &&  (msgs?.length > 0 ? (msgs[0]?._id !== data?.message?._id) : (true))) {
       let newMessage = {
         _id: data?.message?._id || "",
         text: data?.message?.text || "",
@@ -99,7 +103,7 @@ const Index = ({ id }) => {
         senderId: data?.message?.senderId || "",
         createdAt: data?.message?.createdAt || "",
         conversationId: data?.message?.conversationId || "",
-        advertId: data?.message?.advertId || "",
+        // advertId: data?.message?.advertId || "",
       };
       msgs.push(newMessage)
 
@@ -124,12 +128,11 @@ const Index = ({ id }) => {
 
     socket?.on('connect', () => {
 
-      console.log('socket connected');
     });
 
     socket?.on("chat", (data) => {
 
-      if (data && data.message) {
+      if (data && data?.message) {
         setIncomingMsg(data)
       }
     })
@@ -172,7 +175,7 @@ const Index = ({ id }) => {
               </div>
               {/* End .row */}
 
-              <ChatBox search={search} setSearch={setSearch} user={user} senderId={senderId} getUserMessages={getUserMessages} messages={messages} conversationId={conversationId} advertId={advertId} postMessage={postMessage} />
+              <ChatBox id={id} search={search} setSearch={setSearch} user={user} senderId={senderId} getUserMessages={getUserMessages} messages={messages} conversationId={conversationId} advertId={advertId} postMessage={postMessage} />
               {/* End message box */}
 
               <div className="row mt50">

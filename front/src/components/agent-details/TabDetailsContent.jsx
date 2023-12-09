@@ -5,9 +5,12 @@ import Ratings from "../blog-details/Ratings";
 import ReviewBox from "../blog-details/ReviewBox";
 import DescriptionsText from "./DescriptionsText";
 import Listings from "./Listings";
+import { getCurrentUser } from "../../utils/auth";
 
 const TabDetailsContent = ({ officeDataDetail }) => {
   console.log(officeDataDetail);
+  const currentUser = getCurrentUser();
+
   return (
     <>
       <ul className="nav nav-tabs" id="myTab" role="tablist">
@@ -25,7 +28,7 @@ const TabDetailsContent = ({ officeDataDetail }) => {
         </li>
         {/* End Description tab */}
 
-        {/* <li className="nav-item">
+       {currentUser && currentUser?.type === "doctor" ? " ":<li className="nav-item">
           <a
             className="nav-link"
             data-bs-toggle="tab"
@@ -34,9 +37,9 @@ const TabDetailsContent = ({ officeDataDetail }) => {
             aria-controls="listing"
             aria-selected="false"
           >
-            İlanlar
+            Randevu
           </a>
-        </li> */}
+        </li>}
         {/* End Listing tab */}
 
         <li className="nav-item">
@@ -72,14 +75,14 @@ const TabDetailsContent = ({ officeDataDetail }) => {
           </div>
         </div>
         {/* End Description details content*/}
-
-        {/* <div
+ 
+        <div
           className="tab-pane fade row pl15 pl0-1199 pr15 pr0-1199"
           id="listing"
           role="tabpanel"
         >
           <Listings officeDataDetail={officeDataDetail} />
-        </div> */}
+        </div>
         {/* End Listing details content*/}
 
         <div

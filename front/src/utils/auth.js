@@ -34,10 +34,10 @@ export const setCurrentUser = (user) => {
 
 export const logoutFromSystem = () => {
   authServices.logout().then(res => {
-    Swal.fire({ title: 'Oturumunuzun süresi doldu!', text: '', icon: 'error', customClass: 'sweet-alerts' });
+    Swal.fire({ title: 'Oturumunuzun Süresi Doldu Lütfen Giriş Yapınız!', text: '', icon: 'error', customClass: 'sweet-alerts' });
     localStorage.removeItem("current_user");
     localStorage.removeItem("userToken");
-    location.replace('/')
+    location.replace('/login')
   })
 };
 

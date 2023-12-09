@@ -9,7 +9,7 @@ const getUsers = async (search = '') => {
     console.log('TOKEN', token)
     let res = await axios({
         method: "GET",
-        url: `/chat/users-list?searchKey=${search}`,
+        url: `/chat/user-list?searchKey=${search}`,
         headers: { Authorization: `Bearer ${token}` },
     })
         .then((res) => res?.data)
@@ -23,9 +23,9 @@ const getUsers = async (search = '') => {
     return res;
 };
 
-const getMessage = async (conversationId, advertId) => {
+const getMessage = async (conversationId) => {
     const token = localStorage.getItem("userToken");
-    const urlLink = conversationId ? `/chat/message/${conversationId}/${advertId}` : `/chat/user-message/${advertId}`
+    const urlLink = conversationId ? `/chat/message-list/${conversationId}` : `/chat/user-message`
     let res = await axios({
         method: "GET",
         url: urlLink,
@@ -57,12 +57,12 @@ const getUserMessageWithAdvertId = async ( advertId) => {
         });
     return res?.data;
 };
-const postMessage = async (data,id) => {
+const postMessage = async (data) => {
     const token = localStorage.getItem("userToken");
     console.log("data : ", data);
     let res = await axios({
         method: "POST",
-        url: `/chat/${id}`,
+        url: `/chat/send-message`,
         headers: { Authorization: `Bearer ${token}` },
         data
     })

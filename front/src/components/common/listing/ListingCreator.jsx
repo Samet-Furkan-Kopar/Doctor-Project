@@ -103,7 +103,7 @@ const Creaator = ({ property, advertType, sendMsgStatus }) => {
           {sendMsgStatus && !presentMode && 
             <div className="row d-flex justify-content-center media-footer w-100">
               <Link
-                href={`/ilana-yaz/${property?._id}`}
+                href={`/doktora-yaz/${property?._id}`}
                 className="d-block mx-auto text-center"
               >
                 Mesaj Gönder

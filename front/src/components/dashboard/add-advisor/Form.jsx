@@ -54,7 +54,6 @@ export default function Form() {
       generalServices.getCityList(country).then((res) => {
         console.log(res);
         if (res?.succedd) {
-          console.log(country);
           setCitys(res.data);
           setCity(null);
           setDistrict(null);

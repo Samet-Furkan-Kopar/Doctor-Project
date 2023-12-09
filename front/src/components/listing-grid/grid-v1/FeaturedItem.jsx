@@ -177,7 +177,7 @@ const FeaturedItem = () => {
           </Link>
         ))
       ) : (
-        <div className="d-flex justify-content-center w-100 text-dark h2">İlan bulunamadı.</div>
+        <div className="d-flex justify-content-center w-100 text-dark h2">Ofis bulunamadı.</div>
       )}
     </>
   );

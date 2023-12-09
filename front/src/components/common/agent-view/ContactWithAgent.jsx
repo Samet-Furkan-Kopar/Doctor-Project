@@ -164,7 +164,7 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 
-const ContactWithAgent = () => {
+const ContactWithAgent = ({id}) => {
   const route = useRouter();
 
  
@@ -174,10 +174,10 @@ const ContactWithAgent = () => {
       <div></div>
       <div></div>
       <Link
-              href="/mesajlarim"
-              className={route.pathname === "/mesajlarim" ? "ui-active" : undefined}
+              href={`/doktora-yaz/${id}`}
+              className={route.pathname === `/doktora-yaz/${id}` ? "ui-active" : undefined}
             >
-              Mesaj
+              Mesajx
             </Link>
       
     </div>

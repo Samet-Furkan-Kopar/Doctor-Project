@@ -36,16 +36,16 @@ const MyAccount = ({ currentUser }) => {
 
   const [profileMenuItems, setProfileMenuItems] = useState([
     { id: 1, name: " Dashboard", ruterPath: "/dashboard" },
-    { id: 1, name: " İlanlarım", ruterPath: "/ilanlarim" },
-    { id: 2, name: " Profilim", ruterPath: "/profilim" },
-    { id: 3, name: " Favorilerim", ruterPath: "/favori-ilanlarim" },
-    { id: 4, name: " Mesajlarım", ruterPath: "/ilan-mesajlari" },
+    { id: 2, name: currentUser?.type === 'doctor' && "Bloglarım", ruterPath: "/bloglarim" },
+    { id: 3, name: " Profilim", ruterPath: "/profilim" },
+    { id: 4, name: currentUser?.type === 'doctor' ? "Randevu Talepleri" : "Randevularım", ruterPath: "/randevu" },
+    { id: 5, name: currentUser?.type === 'doctor' ? "Ofis Mesajları" : "Mesajlarım", ruterPath: "/mesajlarim" },
   ])
 
 
-  useEffect(() => {
-    currentUser && currentUser?.type === 'doctor' && !profileMenuItems.find(i => i.id === 5) && setProfileMenuItems((prev) => [...prev, { id: 5, name: " Ofis Mesajları", ruterPath: "/form-mesajlari" }])
-  }, [currentUser])
+  // useEffect(() => {
+  //   currentUser && currentUser?.type === 'doctor' && !profileMenuItems.find(i => i.id === 5) && setProfileMenuItems((prev) => [...prev, { id: 5, name: " Ofis Mesajları", ruterPath: "/mesajlarim" }])
+  // }, [currentUser])
 
   const route = useRouter();
 
@@ -75,7 +75,7 @@ const MyAccount = ({ currentUser }) => {
           {currentUser?.firstName +" "+currentUser.lastName} <br />
           <span className="address">{currentUser?.email}</span>
           <br />
-          {checkOfficial && 
+          {/* {checkOfficial && 
             <span className="address d-flex align-items-center">Sunum Modu
               <Image
                 loader={imageLoader}
@@ -86,7 +86,7 @@ const MyAccount = ({ currentUser }) => {
                 alt="e1.png"
               />
             </span>
-          }
+          } */}
         </p>
       </div>
       {/* End user_set_header */}

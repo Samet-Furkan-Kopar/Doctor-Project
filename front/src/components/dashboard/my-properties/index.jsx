@@ -44,7 +44,7 @@ const Index = () => {
 
                 <div className="col-lg-4 col-xl-4 mb10">
                   <div className="breadcrumb_content style2 mb30-991">
-                    <h2 className="breadcrumb_title">İlanlarım</h2>
+                    <h2 className="breadcrumb_title">Bloglarım</h2>
                   </div>
                 </div>
                 {/* End .col */}

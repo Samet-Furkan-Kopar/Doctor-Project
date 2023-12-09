@@ -155,7 +155,7 @@ const Index = () => {
             <div className="col-lg-6 position-relative">
               {/* End list grid */}
 
-              <div
+              {/* <div
                 className="dn db-991 mb0 d-block map-list-filter-btn"
                 style={{ right: "10px" }}
               >
@@ -171,7 +171,7 @@ const Index = () => {
                     Gizli İlanlar
                   </span>
                 </div>
-              </div>
+              </div> */}
               {/* ENd button for mobile sidebar show  */}
             </div>
           </div>

@@ -9,7 +9,7 @@ const SidebarListings = ({ officeDataDetail }) => {
       <div className="sidebar_listing_list">
         <div className="sidebar_advanced_search_widget">
           <h4 className="mb25">Bizimle İletişime Geçin</h4>
-          <ContactWithAgent />
+          <ContactWithAgent id= {officeDataDetail?.userId} />
         </div>
       </div>
       {/* End filter and search area */}

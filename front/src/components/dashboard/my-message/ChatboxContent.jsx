@@ -2,11 +2,12 @@ import Swal from "sweetalert2";
 import SignleChatboxReply from "./SignleChatboxReply";
 import { useState } from "react";
 
-const ChatboxContent = ({ messages, postMessage, senderId, conversationId, advertId }) => {
+const ChatboxContent = ({id, messages, postMessage, senderId, conversationId, advertId }) => {
   const [postData, setPostData] = useState("");
   // const shouldShowSendButton = senderId && conversationId;
+  console.log();
   let shouldShowSendButton;
-  if (advertId) {
+  if (conversationId || id) {
     shouldShowSendButton = true
   }
   return (

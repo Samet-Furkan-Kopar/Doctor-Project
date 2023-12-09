@@ -6,7 +6,7 @@ import masterServices from "../../../services/user.service";
 const ChangePasswordSchema = Yup.object().shape({
   currentpassword: Yup.string().required("Geçerli şifreyi yazmalısınız."),
   password: Yup.string().required("Yeni şifre'yi yazmalısınız"),
-  confirmPassword: Yup.string()
+  confirm_password: Yup.string()
     .required("Yeni şifre tekrarını yazmalısınız.")
     .oneOf([Yup.ref("password")], "Yeni şifreler eşleşmiyor."),
 });
@@ -18,19 +18,17 @@ const ChangePassword = ({ userData }) => {
       initialValues={{
         currentpassword: "",
         password: "",
-        confirmPassword: "",
+        confirm_password: "",
       }}
       onSubmit={(values, { setSubmitting }) => {
-        console.log(values);
 
         masterServices.restartPassword(values).then((res) => {
-          console.log(res);
-          if (res?.succeded) {
+          if (res?.succedd === true) {
             toast(res?.message);
           } else {
             toast(res?.response?.data?.message);
           }
-        });
+        })
 
         setSubmitting(false);
       }}
@@ -60,7 +58,7 @@ const ChangePassword = ({ userData }) => {
               <div className="my_profile_setting_input form-group">
                 <label htmlFor="currentpassword">Geçerli Şifre</label>
                 <input
-                  type="text"
+                  type="password"
                   className="form-control"
                   id="currentpassword"
                   name="currentpassword"
@@ -75,7 +73,7 @@ const ChangePassword = ({ userData }) => {
               <div className="my_profile_setting_input form-group">
                 <label htmlFor="password">Yeni Şifre</label>
                 <input
-                  type="text"
+                  type="password"
                   className="form-control"
                   id="password"
                   name="password"
@@ -89,15 +87,15 @@ const ChangePassword = ({ userData }) => {
 
             <div className="col-lg-6 col-xl-6">
               <div className="my_profile_setting_input form-group">
-                <label htmlFor="confirmPassword">Yeni Şifre Tekrarı</label>
+                <label htmlFor="confirm_password">Yeni Şifre Tekrarı</label>
                 <input
-                  type="text"
+                  type="password"
                   className="form-control"
-                  id="confirmPassword"
-                  name="confirmPassword"
+                  id="confirm_password"
+                  name="confirm_password"
                   onChange={handleChange}
                   onBlur={handleBlur}
-                  value={values.confirmPassword}
+                  value={values.confirm_password}
                 />
               </div>
             </div>

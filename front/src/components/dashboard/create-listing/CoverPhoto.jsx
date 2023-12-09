@@ -65,7 +65,6 @@ export default function CoverPhoto({
       />
 
       <div className="row">
-        {console.log("VALUES : ", values)}
         <div className="col-lg-12">
           <ul className="mb-0">
             {/* Yüklenen resimleri göstermek için */}
